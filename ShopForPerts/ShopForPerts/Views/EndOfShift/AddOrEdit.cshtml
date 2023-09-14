@@ -1,0 +1,111 @@
+﻿@model ShopForPerts.Data.Models.EndOfShift
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    ViewData["Title"] = "EndOfShift";
+}
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h1>Закрытие смены</h1>
+        
+        <form asp-action="AddOrEdit" autocomplete="off">
+
+            
+            <div class="form-group">
+                <label asp-for="collection" class="control-label"></label>
+                <input asp-for="collection" class="form-control" />
+                <span asp-validation-for="collection" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cashless" class="control-label"></label>
+                <input asp-for="cashless" class="form-control" />
+                <span asp-validation-for="cashless" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="cash" class="control-label"></label>
+                <input asp-for="cash" class="form-control" />
+                <span asp-validation-for="cash" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="banknote5000" class="control-label"></label>
+                <input asp-for="banknote5000" class="form-control" />
+                <span asp-validation-for="banknote5000" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="bankote1000" class="control-label"></label>
+                <input asp-for="bankote1000" class="form-control" />
+                <span asp-validation-for="bankote1000" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="bankote500" class="control-label"></label>
+                <input asp-for="bankote500" class="form-control" />
+                <span asp-validation-for="bankote500" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="bankote100" class="control-label"></label>
+                <input asp-for="bankote100" class="form-control" />
+                <span asp-validation-for="bankote100" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="bankote50" class="control-label"></label>
+                <input asp-for="bankote50" class="form-control" />
+                <span asp-validation-for="bankote50" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="bankoteSmall" class="control-label"></label>
+                <input asp-for="bankoteSmall" class="form-control" />
+                <span asp-validation-for="bankoteSmall" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="refund" class="control-label"></label>
+                <input asp-for="refund" class="form-control" />
+                <span asp-validation-for="refund" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="seller1" class="control-label"></label>
+                <input asp-for="seller1" class="form-control" />
+                <span asp-validation-for="seller1" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="seller2" class="control-label"></label>
+                <input asp-for="seller2" class="form-control" />
+                <span asp-validation-for="seller2" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="day" class="control-label"></label>
+                <input asp-for="day" class="form-control" />
+                <span asp-validation-for="day" class="text-danger"></span>
+
+            </div>
+
+
+
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="submit" value="Submit" class="btn btn-primary w-100" />
+                    </div>
+                </div>
+                @if (HttpContextAccessor.HttpContext.Session.GetString("ManagerId") != null)
+                {
+                    <div class="col-md-6">
+                        <a asp-action="Index" class="btn btn-secondary  w-100">View All</a>
+                    </div>
+                }
+            </div>
+        </form>
+    </div>
+</div>
+
+

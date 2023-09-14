@@ -1,0 +1,14 @@
+﻿@using ShopForPerts.Data.Models
+
+<h1>Все товары</h1>
+<h3>@Model.currCategory</h3>
+<div class="row mt-5 mb-2">
+    @{ foreach (Product product in Model.getAllProducts)
+        {
+
+            @Html.Partial("AllProduct", product)
+            }
+
+        }
+</div>
+

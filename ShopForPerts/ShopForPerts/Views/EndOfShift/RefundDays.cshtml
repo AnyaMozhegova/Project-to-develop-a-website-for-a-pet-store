@@ -1,0 +1,31 @@
+﻿
+
+
+<h1>Refund Days</h1>
+
+<form method="get">
+    <div class="form-group">
+        <label for="refundAmount">Refund Amount:</label>
+        <input type="number" id="refundAmount" name="refundAmount" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Calculate</button>
+</form>
+
+@if (Model.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ToShortDateString()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

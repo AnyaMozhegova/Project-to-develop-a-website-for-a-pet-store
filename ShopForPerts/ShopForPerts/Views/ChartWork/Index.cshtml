@@ -1,0 +1,104 @@
+﻿@model IEnumerable<ShopForPerts.Data.Models.ChartWork>
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    ViewData["Title"] = "ChartWork";
+}
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <h1>Passbook</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.id)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.LastNameSeller1)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FirstNameSeller1)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.MiddleNameSeller1)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.LastNameSeller2)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FirstNameSeller2)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.MiddleNameSeller2)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Desc)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.day)
+                    </th>
+                    @if (HttpContextAccessor.HttpContext.Session.GetString("ManagerId") != null)
+                    {
+                        <th>
+                            <a asp-action="AddOrEdit" class="btn btn-sm btn-success">
+                                <i class="fa-solid fa-plus"></i> New
+                            </a>
+                        </th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastNameSeller1)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstNameSeller1)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MiddleNameSeller1)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastNameSeller2)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstNameSeller2)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MiddleNameSeller2)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Desc)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.day)
+                        </td>
+                        @if (HttpContextAccessor.HttpContext.Session.GetString("ManagerId") != null)
+                        {
+                            <td>
+                                <form asp-action="Delete" asp-route-id="@item.id">
+                                    <div class="btn-group btn-group-sm">
+                                        <a asp-action="AddOrEdit" asp-route-id="@item.id" class="btn btn-warning">
+                                            <i class="fa-solid fa-pen-to-square"></i>
+                                        </a>
+                                        <button type="submit" class="btn btn-danger"
+                                                onclick="return confirm('Are you sure to delete this record?')">
+                                            <i class="far fa-trash-alt"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

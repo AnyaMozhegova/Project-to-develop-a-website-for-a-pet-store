@@ -1,0 +1,77 @@
+﻿@model ShopForPerts.Data.Models.ChartWork
+
+@{
+    ViewData["Title"] = "ChartWork";
+}
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h1>График работы</h1>
+        <form asp-action="AddOrEdit" autocomplete="off">
+
+           
+            <div class="form-group">
+                <label asp-for="LastNameSeller1" class="control-label"></label>
+                <input asp-for="LastNameSeller1" class="form-control" />
+                <span asp-validation-for="LastNameSeller1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirstNameSeller1" class="control-label"></label>
+                <input asp-for="FirstNameSeller1" class="form-control" />
+                <span asp-validation-for="FirstNameSeller1" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="MiddleNameSeller1" class="control-label"></label>
+                <input asp-for="MiddleNameSeller1" class="form-control" />
+                <span asp-validation-for="MiddleNameSeller1" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="LastNameSeller2" class="control-label"></label>
+                <input asp-for="LastNameSeller2" class="form-control" />
+                <span asp-validation-for="LastNameSeller2" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="FirstNameSeller2" class="control-label"></label>
+                <input asp-for="FirstNameSeller2" class="form-control" />
+                <span asp-validation-for="FirstNameSeller2" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="MiddleNameSeller2" class="control-label"></label>
+                <input asp-for="MiddleNameSeller2" class="form-control" />
+                <span asp-validation-for="MiddleNameSeller2" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="Desc" class="control-label"></label>
+                <input asp-for="Desc" class="form-control" />
+                <span asp-validation-for="Desc" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="day" class="control-label"></label>
+                <input asp-for="day" class="form-control" />
+                <span asp-validation-for="day" class="text-danger"></span>
+
+           
+
+
+
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="submit" value="Submit" class="btn btn-primary w-100" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <a asp-action="Index" class="btn btn-secondary  w-100">View All</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
